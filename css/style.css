@@ -20,3 +20,11 @@
 .post-link {
   font-weight: bold;
 }
+
+.tag {
+  font-weight: bold;
+  padding-right: 10px;
+}
+.tags {
+  border-top: 1px solid #000;
+}
