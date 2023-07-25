@@ -60,7 +60,7 @@ function makeOnePostEl(pObj) {
   const pEl = crEl('p', {}, pObj.body.slice(0, 25) + '...');
   const linkEl = crEl(
     'a',
-    { class: 'post-link', href: 'single-post.html' },
+    { class: 'post-link', href: `single-post.html?pId=${pObj.id}` },
     'Read more...'
   );
   liEl.append(titleEl, pEl, linkEl);
@@ -72,13 +72,14 @@ function sortPostByTitle() {
   console.log('sortPostByTitle ran');
   // isrikiuoti
   mainPostArr.sort((aObj, bObj) => {
-    if (aObj.title < bObj.title) {
-      return -1;
-    } else if (aObj.title > bObj.title) {
-      return 1;
-    } else {
-      return 0;
-    }
+    // if (aObj.title < bObj.title) {
+    //   return -1;
+    // } else if (aObj.title > bObj.title) {
+    //   return 1;
+    // } else {
+    //   return 0;
+    // }
+    return aObj.title.localeCompare(bObj.title);
   });
   console.table(mainPostArr);
   // perpiesti masyva po isrikiavimo
