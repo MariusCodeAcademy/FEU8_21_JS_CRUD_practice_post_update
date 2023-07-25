@@ -3,6 +3,7 @@ console.log('app.js file was loaded');
 // taikomes
 const els = {
   postsContainer: document.getElementById('posts'),
+  sortTitleBtn: document.getElementById('sort-title'),
 };
 console.log('els ===', els);
 const url = 'https://dummyjson.com/posts';
@@ -14,6 +15,8 @@ const url = 'https://dummyjson.com/posts';
 // juos atspindesim htmle
 
 let mainPostArr = [];
+
+els.sortTitleBtn.addEventListener('click', sortPostByTitle);
 
 getPosts();
 
@@ -63,4 +66,21 @@ function makeOnePostEl(pObj) {
   liEl.append(titleEl, pEl, linkEl);
   // console.log('liEl ===', liEl);
   return liEl;
+}
+
+function sortPostByTitle() {
+  console.log('sortPostByTitle ran');
+  // isrikiuoti
+  mainPostArr.sort((aObj, bObj) => {
+    if (aObj.title < bObj.title) {
+      return -1;
+    } else if (aObj.title > bObj.title) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  console.table(mainPostArr);
+  // perpiesti masyva po isrikiavimo
+  render();
 }
