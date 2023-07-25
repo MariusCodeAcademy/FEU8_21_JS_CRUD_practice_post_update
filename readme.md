@@ -11,6 +11,7 @@
 1. prideti kiek yra reactions i kieviena kortele su reiksme
 2. sutrumpinti title teksta iki 15 simboliu
 3. atvaizuodti ne 10 o 20 korteliu
+4. sukurti mygtuka 'sortById z-a' kuris isrikiuotu korteles pagal id mazejancia tvarka
 
 ## shop.html (kas nepasidareti is vakar)
 
