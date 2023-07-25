@@ -5,6 +5,27 @@
   padding-left: 0;
 }
 
+/* Header */
+
+header {
+  background-color: #333;
+  color: white;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLink {
+  padding: 0.8rem 1.2rem;
+  display: inline-block;
+}
+.navLink:hover {
+  background-color: #717171;
+}
+
 .grid {
   display: grid;
   gap: 16px;
