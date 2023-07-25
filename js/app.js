@@ -12,17 +12,18 @@ const url = 'https://dummyjson.com/posts';
 let mainPostArr = [];
 
 getPosts();
-render();
+
 function getPosts() {
   fetch(url + '?limit=10')
     .then((resp) => resp.json())
     .then((atsObj) => {
       mainPostArr = atsObj.posts;
+      render();
     })
     .catch(console.warn);
 }
 
 function render() {
   // spauzdindami gautime parsiustus duomenis
-  console.log('mainPostArr ===', mainPostArr);
+  console.log('render fn mainPostArr ===', mainPostArr);
 }
