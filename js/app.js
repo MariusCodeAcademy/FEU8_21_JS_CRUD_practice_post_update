@@ -1,6 +1,10 @@
 import { crEl } from './helper/crEl.js';
 console.log('app.js file was loaded');
-
+// taikomes
+const els = {
+  postsContainer: document.getElementById('posts'),
+};
+console.log('els ===', els);
 const url = 'https://dummyjson.com/posts';
 
 // Declarative way
@@ -24,10 +28,12 @@ function getPosts() {
 }
 
 function render() {
+  els.postsContainer.innerHTML = '';
   // spauzdindami gautime parsiustus duomenis
   console.log('render fn mainPostArr ===', mainPostArr);
-  const kasGryzo = makeOnePostEl(mainPostArr[0]);
-  console.log('kasGryzo ===', kasGryzo);
+  const htmlElArr = mainPostArr.map((pObj) => makeOnePostEl(pObj));
+  console.log('htmlElArr ===', htmlElArr);
+  els.postsContainer.append(...htmlElArr);
 }
 /*
 {
