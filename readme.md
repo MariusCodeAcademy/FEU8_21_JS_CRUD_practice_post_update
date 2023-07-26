@@ -8,7 +8,7 @@
 
 ## index js
 
-1. parsiusti visu postus ir sugeneruoti saraso pavidalu. Atvaizduoti title istrauka, autoriu ir data.
+1. parsiusti visu postus ir sugeneruoti saraso pavidalu. Atvaizduoti title istrauka, autoriu ir data viename li elemente
 2. saraso elementas turetu buti nuoroda kuri veda i single-post.html
 3. sukurti select lauka
 4. select lauke pasirinkimai turetu buti: title, author, date
