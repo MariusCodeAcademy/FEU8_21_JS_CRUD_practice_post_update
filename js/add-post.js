@@ -53,7 +53,7 @@ function sendNewPostFetch(newPostDataObj) {
         // window.location.href = 'index.html';
       } else {
         // kitu atveju klaida
-        console.warn('kazkas nepavyko', postRezult.message);
+        console.warn('kazkas nepavyko', postRezult);
       }
     })
     .catch(console.warn);
