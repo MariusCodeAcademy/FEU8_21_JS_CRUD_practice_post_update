@@ -1,4 +1,6 @@
 import { crEl } from './helper/crEl.js';
+import { url } from './helper/config.js';
+
 console.log('app.js file was loaded');
 // taikomes
 const els = {
@@ -6,7 +8,6 @@ const els = {
   sortTitleBtn: document.getElementById('sort-title'),
 };
 console.log('els ===', els);
-const url = 'https://dummyjson.com/posts';
 
 // Declarative way
 // Turesim viena pagrindini globalu masyva
@@ -21,10 +22,11 @@ els.sortTitleBtn.addEventListener('click', sortPostByTitle);
 getPosts();
 
 function getPosts() {
-  fetch(url + '?limit=15')
+  fetch(url)
     .then((resp) => resp.json())
     .then((atsObj) => {
-      mainPostArr = atsObj.posts;
+      console.log('atsObj ===', atsObj);
+      mainPostArr = atsObj;
       render();
     })
     .catch(console.warn);

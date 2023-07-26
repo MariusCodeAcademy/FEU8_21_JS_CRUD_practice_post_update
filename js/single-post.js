@@ -1,7 +1,8 @@
 import { crEl } from './helper/crEl.js';
+import { url } from './helper/config.js';
+
 console.log('single-post.js file was loaded');
 
-const url = 'https://dummyjson.com/posts';
 const contentEl = document.getElementById('content');
 
 // gauti pId is url parametru
@@ -52,10 +53,6 @@ function renderPost(pObj) {
     const liEl = crEl('li', { class: 'tag' }, tagString);
     ulEl.append(liEl);
   });
-  const pLikes = crEl(
-    'p',
-    { class: 'react' },
-    `${pObj.reactions} People liked the post`
-  );
+  const pLikes = crEl('p', { class: 'author' }, `Author: ${pObj.author}`);
   contentEl.append(title, pEl, tagTitle, ulEl, pLikes);
 }

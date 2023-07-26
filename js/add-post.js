@@ -1,3 +1,4 @@
+import { url } from './helper/config.js';
 console.log('add-post.js file was loaded');
 
 // taikomes
@@ -37,7 +38,7 @@ function sendNewPostFetch(newPostDataObj) {
   console.log('sendNewPostFetch fn ran ===', newPostDataObj);
   // verciam js objekta i json
   const newPostInJson = JSON.stringify(newPostDataObj);
-  fetch('https://dummyjson.com/posts/add', {
+  fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: newPostInJson,

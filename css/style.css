@@ -58,3 +58,8 @@ header .container {
   gap: 15px;
   align-items: start;
 }
+
+.author {
+  font-style: italic;
+  font-size: 1.2rem;
+}
