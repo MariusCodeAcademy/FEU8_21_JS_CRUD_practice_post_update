@@ -56,3 +56,6 @@ function renderPost(pObj) {
   const pLikes = crEl('p', { class: 'author' }, `Author: ${pObj.author}`);
   contentEl.append(title, pEl, tagTitle, ulEl, pLikes);
 }
+
+// gauti console log kai paspaudziam delete mygtuka
+// isspausdinti posto id paspaudus delete mygtuka

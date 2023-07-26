@@ -5,6 +5,8 @@ console.log('add-post.js file was loaded');
 const els = {
   form: document.forms[0],
   title: document.getElementById('title'),
+  author: document.getElementById('author'),
+  date: document.getElementById('date'),
   body: document.getElementById('body'),
   tags: document.getElementById('tags'),
 };
@@ -25,14 +27,26 @@ function newPostHandler(event) {
   // paimti visus inputus is formos is sudeti i viena objekta
   const newPostObj = {
     title: els.title.value.trim(),
+    author: els.author.value.trim(),
     body: els.body.value.trim(),
-    tags: els.tags.value.trim(),
-    userId: 5,
+    date: els.date.value,
+    tags: els.tags.value.split(',').map((str) => str.trim()),
   };
   // newPostObj.tags - turi buti masyvas
   console.log('newPostObj ===', newPostObj);
   sendNewPostFetch(newPostObj);
 }
+
+/*
+new post obj
+{
+  "title": "Test Post",
+  "body": "This is a test post.",
+  "author": "John Doe",
+  "tags": ["test", "example"],
+  "date": "2022-04-03"
+}
+*/
 
 function sendNewPostFetch(newPostDataObj) {
   console.log('sendNewPostFetch fn ran ===', newPostDataObj);
