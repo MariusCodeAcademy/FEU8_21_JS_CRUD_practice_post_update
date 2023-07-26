@@ -21,7 +21,7 @@ els.sortTitleBtn.addEventListener('click', sortPostByTitle);
 getPosts();
 
 function getPosts() {
-  fetch(url + '?limit=10')
+  fetch(url + '?limit=15')
     .then((resp) => resp.json())
     .then((atsObj) => {
       mainPostArr = atsObj.posts;
@@ -37,6 +37,7 @@ function render() {
   const htmlElArr = mainPostArr.map((pObj) => makeOnePostEl(pObj));
   console.log('htmlElArr ===', htmlElArr);
   els.postsContainer.append(...htmlElArr);
+  updatePostsCount();
 }
 /*
 {
@@ -84,4 +85,10 @@ function sortPostByTitle() {
   console.table(mainPostArr);
   // perpiesti masyva po isrikiavimo
   render();
+}
+
+function updatePostsCount() {
+  const postsCount = mainPostArr.length;
+  console.log('postsCount ===', postsCount);
+  return postsCount;
 }
