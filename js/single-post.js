@@ -5,12 +5,17 @@ console.log('single-post.js file was loaded');
 
 const contentEl = document.getElementById('content');
 const deleteBtn = document.getElementById('delete');
+const editBtn = document.getElementById('edit');
 
 // gauti pId is url parametru
 
 const params = new URLSearchParams(window.location.search);
 const postId = params.get('pId');
 console.log('postId ===', postId);
+
+editBtn.addEventListener('click', () => {
+  window.location.href = `edit-post.html?postId=${postId}`;
+});
 
 deleteBtn.addEventListener('click', () => {
   // gauti console log kai paspaudziam delete mygtuka
