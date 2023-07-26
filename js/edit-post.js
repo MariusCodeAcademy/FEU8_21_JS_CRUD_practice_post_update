@@ -26,6 +26,7 @@ function getSinglePost() {
       // iskonsolinti gauta post objekta
       // console.log('postObj ===', postObj);
       postObjToInputs(postObj);
+      // issaugoti orginala
     })
     .catch(console.warn);
 }
