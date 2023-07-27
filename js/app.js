@@ -5,6 +5,7 @@ console.log('app.js file was loaded');
 // taikomes
 const els = {
   postsContainer: document.getElementById('posts'),
+  sortSelect: document.getElementById('sortSelect'),
   sortTitleBtn: document.getElementById('sort-title'),
 };
 console.log('els ===', els);
@@ -18,6 +19,22 @@ console.log('els ===', els);
 let mainPostArr = [];
 
 els.sortTitleBtn.addEventListener('click', sortPostByTitle);
+els.sortSelect.addEventListener('change', sortPostBy);
+
+function sortPostBy() {
+  console.log('change');
+  console.log('sortSelect.value ===', sortSelect.value);
+  switch (sortSelect.value) {
+    case 'title':
+      sortPostByTitle();
+      break;
+    case 'author':
+      mainPostArr.sort((aObj, bObj) => aObj.author.localeCompare(bObj.author));
+      render();
+      console.table(mainPostArr);
+      break;
+  }
+}
 
 getPosts();
 

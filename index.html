@@ -23,6 +23,15 @@
     <h1>CRUD - posts</h1>
     <p class="posts-count">10 post loaded</p>
     <button id="sort-title">sortByTitle a-z</button>
+    <fieldset>
+      <legend>sort by</legend>
+      <select name="sortSelect" id="sortSelect">
+        <option value="title">Title</option>
+        <option value="author">Author</option>
+        <option value="date">Date</option>
+      </select>
+    </fieldset>
+
     <ul id="posts" class="unlisted grid">
       <li class="post">
         <h3>title</h3>
